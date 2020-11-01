@@ -1,0 +1,29 @@
+pipeline {
+agent any
+{
+stages {
+stage('Code Checkout')
+{
+steps{
+
+echo 'Build'
+}
+}
+stage('Test')
+{
+steps {
+build 'Sample2'
+}
+}
+stage('Release')
+{
+steps {
+dir('C:\\Users\\hmogusal\\Documents') {
+    bat '''javac Sample.java
+java Sample'''
+}
+}
+}
+}
+}
+}
